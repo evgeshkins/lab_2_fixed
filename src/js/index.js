@@ -19,29 +19,31 @@ $(document).ready(function () {
         const modal = $(document).find("#modal")
         const currentCardId = modal.attr("currentItem")
         console.log(currentCardId)
-        if (event.key === "ArrowLeft") {{
-            if ($(`#object-${currentCardId - 1}`).length) {
-                fillModal(modal, $(`#object-${currentCardId - 1}`));
-                modal.attr("currentItem", currentCardId - 1);
-            }
-            else {
-                fillModal(modal, $(`#${$(".card").length}`));
-                modal.attr("currentItem", $(".card").length);
-            }
-        }
-     
+        if (event.key === "ArrowLeft") {
             
-            
-            } else if (event.key === "ArrowRight") {
-                if ($(`#object-${currentCardId + 1}`).length) {
-                    fillModal(modal, $(`#object-${currentCardId + 1}`));
-                    modal.attr("currentItem", currentCardId + 1);
+                if ($(`#object-${currentCardId - 1}`).length) {
+                    fillModal(modal, $(`#object-${currentCardId - 1}`));
+                    modal.attr("currentItem", currentCardId - 1);
                 }
                 else {
                     fillModal(modal, $(`#${$(".card").length}`));
                     modal.attr("currentItem", $(".card").length);
                 }
+            
+
+
+
+        }
+        if (event.key === "ArrowRight") {
+            if ($(`#object-${Number(currentCardId) + 1}`).length) {
+                fillModal(modal, $(`#object-${Number(currentCardId) + 1}`));
+                modal.attr("currentItem", Number(currentCardId) + 1);
             }
+            else {
+                fillModal(modal, $(`#object-1`));
+                modal.attr("currentItem", $(".card").length);
+            }
+        }
     })
     /**$(document).on("mouseover", ".popbtn", function (e) {
         var popover = new bootstrap.Popover($('.popbtn'), {
