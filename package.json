@@ -10,7 +10,7 @@
   },
   "name": "lab_2_fixed",
   "version": "1.0.0",
-  "main": "./src/js/index.js",
+  "default": "./src/index.html",
   "scripts": {
     "test": "mocha",
     "dev": "parcel ./src/index.html",
